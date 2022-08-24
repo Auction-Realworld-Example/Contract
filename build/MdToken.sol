@@ -81,7 +81,6 @@ interface IERC20 {
     ) external returns (bool);
 }
 
-
 // OpenZeppelin Contracts v4.4.1 (token/ERC20/extensions/IERC20Metadata.sol)
 /**
  * @dev Interface for the optional metadata functions from the ERC20 standard.
@@ -105,7 +104,6 @@ interface IERC20Metadata is IERC20 {
     function decimals() external view returns (uint8);
 }
 
-
 // OpenZeppelin Contracts v4.4.1 (utils/Context.sol)
 /**
  * @dev Provides information about the current execution context, including the
@@ -126,7 +124,6 @@ abstract contract Context {
         return msg.data;
     }
 }
-
 
 // OpenZeppelin Contracts (last updated v4.7.0) (token/ERC20/ERC20.sol)
 /**
@@ -504,7 +501,6 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
     ) internal virtual {}
 }
 
-
 // OpenZeppelin Contracts (last updated v4.5.0) (token/ERC20/extensions/ERC20Burnable.sol)
 /**
  * @dev Extension of {ERC20} that allows token holders to destroy both their own
@@ -537,7 +533,6 @@ abstract contract ERC20Burnable is Context, ERC20 {
         _burn(account, amount);
     }
 }
-
 
 // OpenZeppelin Contracts (last updated v4.7.0) (access/Ownable.sol)
 /**
@@ -617,7 +612,6 @@ abstract contract Ownable is Context {
     }
 }
 
-
 // OpenZeppelin Contracts v4.4.1 (token/ERC20/extensions/draft-IERC20Permit.sol)
 /**
  * @dev Interface of the ERC20 Permit extension allowing approvals to be made via signatures, as defined in
@@ -674,7 +668,6 @@ interface IERC20Permit {
     // solhint-disable-next-line func-name-mixedcase
     function DOMAIN_SEPARATOR() external view returns (bytes32);
 }
-
 
 // OpenZeppelin Contracts (last updated v4.7.0) (utils/Strings.sol)
 /**
@@ -747,7 +740,6 @@ library Strings {
         return toHexString(uint256(uint160(addr)), _ADDRESS_LENGTH);
     }
 }
-
 
 // OpenZeppelin Contracts (last updated v4.7.0) (utils/cryptography/ECDSA.sol)
 /**
@@ -976,7 +968,6 @@ library ECDSA {
     }
 }
 
-
 // OpenZeppelin Contracts v4.4.1 (utils/cryptography/draft-EIP712.sol)
 /**
  * @dev https://eips.ethereum.org/EIPS/eip-712[EIP 712] is a standard for hashing and signing of typed structured data.
@@ -1076,7 +1067,6 @@ abstract contract EIP712 {
     }
 }
 
-
 // OpenZeppelin Contracts v4.4.1 (utils/Counters.sol)
 /**
  * @title Counters
@@ -1116,7 +1106,6 @@ library Counters {
         counter._value = 0;
     }
 }
-
 
 // OpenZeppelin Contracts (last updated v4.6.0) (token/ERC20/extensions/draft-ERC20Permit.sol)
 /**
@@ -1204,10 +1193,9 @@ abstract contract ERC20Permit is ERC20, IERC20Permit, EIP712 {
     }
 }
 
-
 contract MdToken is ERC20, ERC20Burnable, Ownable, ERC20Permit {
     constructor() ERC20("Muti Deactive", "MDT") ERC20Permit("Muti Deactive") {
-      mint(msg.sender, 10 ** 8);
+      mint(msg.sender, 10 ** 26);
     }
 
     function mint(address to, uint256 amount) public onlyOwner{

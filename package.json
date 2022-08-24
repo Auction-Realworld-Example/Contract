@@ -16,6 +16,6 @@
     "dotenv": "^16.0.1"
   },
   "scripts": {
-    "flatten": "sol-merger \"./contracts/*.sol\" ./build"
+    "flatten": "sol-merger \"./contracts/MdToken.sol\" ./build"
   }
 }
